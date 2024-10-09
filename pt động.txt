@@ -1,0 +1,29 @@
+- Một số công cụ
++ Run malware
+Pt những mã độc không chạy được dưới dạng exe
++ Process monitor: procmon, procdot
+Giám sát tiến trình
++ Process: process hacker
+
++ Registry: regshot
+Lưu config hệ thống, phát hiện sự thay đổi 
++ Network: wireshark
+
++ Sandbox: viruttotal, any.run, malware bazaar(đa dạng các mẫu malware)
+
+-------------------------------------
+mã độc brbbot
+- process moniter
+filter rồi đọc hành động
+- regshot
+- process exploier
+-------------------------------------
+Lab3-2
+1. Cách cài đặt mã độc?
+cmd rundll32 Lab.dll
+2. Mã độc đạt được persistence như thế nào?
+
+3. Cách chạy mã độc sau khi cài đặt?
+4. Xác định PID của tiến trình đang chạy mã độc.
+5. Dấu hiệu host-based(file, process, registry, service) trên máy bị nhiễm mã độc?
+6. Dấu hiệu về network trên máy bị nhiễm mã độc?
