@@ -20,29 +20,23 @@ Các file nguồn, icon,...
 Ví dụ
 1. Tải tệp lên http://www.VirusTotal.com/ và xem báo cáo. Tệp có khớp với bất kỳ chữ ký chống vi-rút hiện có nào không?
 Tệp Lap01: Có 63/73
-
 2. Những tập tin này được biên dịch khi nào?
 Tệp Lap01: 2019-08-30 22:26:59 UTC
-
 3. Có bất kỳ dấu hiệu nào cho thấy một trong hai tệp này đã được pack hoặc bị obfuscate không?
 Nếu vậy, những dấu hiệu này là gì?
 Tệp Lap01: Cho vào DIE thì ko thấy có 
-
 4. Xác định hành vi dựa trên imports. Chỉ ra một số windows API nghi ngờ (CFF exploier)
 Tệp Lap01: import Kernel32.dll, API WINExec, WriteFile, FileResouceA ->> Đọc resouce và ghi vào 1 file
 Cho vào resouce Hacker thấy có file thực thi
 search API: tên API + msdn
-
 5. Có tệp nào khác mà bạn có thể tìm kiếm trên hệ thống bị nhiễm?
 Tệp Lap01: Cho lên IDA thì thấy nó có đọc và ghi file 
 sinh code C : View -> opensubview -> gen presoure (F5)
-
 6. Những dấu hiệu về kết nối mạng, server của hacker?
 Tệp Lap01: 
 Phát hiện liên hệ với url độc hại
 Phát hiện liên hệ với domain độc hại
 Phát hiện liên hệ với IP độc hại
-
 7. Mục đích của những tập tin này là gì?
 Tệp Lap01: 
 
@@ -63,3 +57,29 @@ UA: Internet Explorer 8.0
 Chạy liên tục và thực hiện kết nối liên tục tới địa chỉ “http://www.malwareanalysisbook.com” phục vụ tăng lượt xem 
 6. Khi nào chương trình này sẽ hoàn tất việc thực thi?
 Khi time set hết năm 2100 or khi kết thúc vòng lặp
+
+
+Phân tích tĩnh mã độc brbbot.exe trong thư mục sample buoi 2.zip ( pass giải nén: infected). Xác định:
+1. Mã độc có bị virustotal gán nhãn độc hại hay không?
+Có 63/73 
+2015-02-25 06:12:18 UTC
+2. Mã độc có đạt kỹ thuật persistence?
+Có 
+Khóa registry HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run trong Windows là một vị trí quan trọng được sử dụng để thiết lập các chương trình tự động khởi động cùng hệ điều hành khi người dùng đăng nhập vào Windows. 
+3. Strings của file mã độc gợi ý điều gì?
+- Cho biết các API sử dụng
+- Các thông tin cấu hình 
+4. Dấu hiệu file của mã độc xuất hiện trên máy nạn nhân?
+- Thấy có khóa HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run được đăng ký với tên brbbot 
+- Có 1 tệp “brbconfig.tmp” 
+- Thấy chương trình đang chạy 
+5. Dấu hiệu về network của mã độc?
+- tên miền brb.3dtuts.by
+- tương tác với websocket
+6. Mã độc sử dụng thuật toán gì để giải mã config?
+Khởi tạo ngữ cảnh mật mã với CSP "Microsoft Enhanced Cryptographic Provider v1.0".
+Tạo một đối tượng băm với thuật toán MD5 và thêm dữ liệu "YnJiYm90" (brbbot) vào đối tượng băm.
+Tạo một khóa mã hóa RC4 (0x00006801) 128-bit(0x800000) dựa trên giá trị băm vừa tính toán. Khóa này sau đó sẽ được dùng để giải mã tệp tin hoặc dữ liệu khác.
+7. Mã độc thuộc loại mã độc nào?
+- Thấy có mở Websocket kết nối với máy chủ từ xa để nhận lệnh điều khiển hoặc thực hiện các hoạt động ngầm khác, đồng thời nó mã hóa dữ liệu để tránh bị phát hiện hoặc phân tích
+ Mã độc backdoor 
