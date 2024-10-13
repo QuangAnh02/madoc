@@ -14,3 +14,8 @@ pip install -U oletools[full]
 - Ví dụ
 olevba 1.doc -a > 1.vba.txt -> notepad++ 
 Mở thẳng bằng doc -> debug vba macro (ngắt kết nối mạng)
+
+
+mẫu 4.xls
+Hidden Sheet -> K18 -> mã thực thi
+
