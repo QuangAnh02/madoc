@@ -1,0 +1,16 @@
+- Phân tích document là phương pháp phát tán mã độc qua document (file office, pdf, ...)
+thành phần chính: 
+Decoy: file giả mạo
+Malicious code: mã độc 
++ Office: thông qua VBA Macro
+VD: khi click vào ENABLE CONTENT
+func: Docment_Open,  Workbook_Open,  Auto_Open
+API Call: WScript.Shell/Shell,   cmd/c
+
+- Công cụ
++ Olevba: oletool github
+pip install -U oletools[full]
+
+- Ví dụ
+olevba 1.doc -a > 1.vba.txt -> notepad++ 
+Mở thẳng bằng doc -> debug vba macro (ngắt kết nối mạng)
