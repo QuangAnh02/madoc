@@ -1,0 +1,24 @@
+- Các hành vi trên windwos
++ Process: thực thể của một chương trình máy tính đang chạy
+System Process luôn có PID = 4
+Smss.exe: Session manager subsystem | tiên trình con của System
+wininit.exe: khởi động  service.exe, Isass.exe: có phiên 0
+Svchost.exe: lưu trữ và quản lý dịch vụ Windows, triển khai đưới dạng DLL
+Lsass.exe: 
+Explorer.exe: 
+Làm sao để nhận diện explorer độc hại: 
+Dựa vào path, explorer đứng 1 mk, có tiến trình cha, thực thi quyền system, tên gần giống, chiếm dụng bộ nhớ, chữ kí, ....
+
++ Services
+Dịch vụ hệ thống
+
++ Registry: lưu các thông tin cấu hình hệ thống
++ FILe
+
+CheckList
++ Lấy thông tin hệ thống: Tên máy, IP, user,...
++ Kiểm tra các tiến trình đang chạy
++ Kiểm tra các tp khởi động cùng hệ thống
++ Kiểm tra kết nối mạng
++ Kiểm tra các tệp tin trong các thư mục nhạy cảm
++ Kiểm tra lịch sử scan/detect của Antivirus
