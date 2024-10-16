@@ -1,0 +1,12 @@
+- Thu thập log
+Memory
+Process
+Network related arificats
+MTF Log: thành phần của NTFs, chứa thông tin về tệp và thư mục trong ổ đĩa
+Registrylog:
+Event log: event viewer
+
+Công cụ: CDIR collectior: 
+- Phân tích log
+
+
