@@ -5,7 +5,7 @@ Network related arificats
 MTF Log: thành phần của NTFs, chứa thông tin về tệp và thư mục trong ổ đĩa
 Registrylog:
 Event log: event viewer
-Brower history:
+Brower history: DB brower -> xác định url mà nạn nhân tải xuống
 Prefetch Log: WinPrefetchView 
 Công cụ: CDIR collectior: 
 - Phân tích log
